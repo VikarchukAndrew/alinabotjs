@@ -5,6 +5,13 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const { executablePath } = require('puppeteer'); 
 const schedule = require('node-schedule');
 const { DateTime } = require('luxon');
+const express = require('express');
+
+const app = express();
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
+});
+
 
 const bot = new Telegraf('5936581129:AAHh6En3oq0AkJg56PflQtcxhsRoZfTmLOk');
 
