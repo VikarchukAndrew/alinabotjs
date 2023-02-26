@@ -13,6 +13,7 @@ async function runJob() {
   puppeteer.use(StealthPlugin())
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: '/app/.apt/usr/bin/chromium-browser',
     args: [
       `--disable-extensions-except=${pathToExtension}`,
       `--load-extension=${pathToExtension}`
