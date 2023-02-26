@@ -5,6 +5,7 @@
   "main": "AlinaBot.js",
   "scripts": {
     "start": "node AlinaBot.js",
+    "dev": "nodemon AlinaBot.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
