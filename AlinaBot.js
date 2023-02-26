@@ -5,6 +5,8 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 const { executablePath } = require('puppeteer'); 
 const schedule = require('node-schedule');
 const { DateTime } = require('luxon');
+const express = require("express");
+const app = express();
 
 const bot = new Telegraf('5936581129:AAHh6En3oq0AkJg56PflQtcxhsRoZfTmLOk');
 
@@ -138,29 +140,9 @@ bot.command('stop', (ctx) => {
 
 bot.launch();
 
-console.log('Bot running...');
+app.listen(process.env.PORT || 3000, () => {
+  console.log("Bot running...");
+});
 
-// async function main() {
-//   let job;
+//console.log('Bot running...');
 
-//   const startJob = (minutes) => {
-//     if (job) {
-//       job.cancel();
-//     }
-//     const scheduleString = `*/${minutes} * * * *`;
-//     job = schedule.scheduleJob(scheduleString, runJob);
-//     console.log(`Job scheduled to run every ${minutes} minutes.`);
-//   };
-
-
-//   const commands = [
-//     { command: "/start", handler: (args) => startJob(args[0]) },
-//   ];
-  
-//   // Set up the job to run every minute by default
-//   startJob(minutes);
-
-//   console.log("Starting code...");
-// }
-
-// main();
