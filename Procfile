@@ -1,1 +1,1 @@
-web: node AlinaBot.js
+worker: npm start
