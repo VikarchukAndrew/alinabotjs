@@ -11,11 +11,8 @@ const bot = new Telegraf('5936581129:AAHh6En3oq0AkJg56PflQtcxhsRoZfTmLOk');
 async function runJob() {
   const pathToExtension = require('path').join(__dirname, '2captcha-solver');
   puppeteer.use(StealthPlugin())
-  const browserFetcher = puppeteer.createBrowserFetcher(); 
-  let revisionInfo = await browserFetcher.download('1095492');
   const browser = await puppeteer.launch({
     headless: 'new',
-    executablePath: revisionInfo.executablePath,
     args: [
       `--disable-extensions-except=${pathToExtension}`,
       `--load-extension=${pathToExtension}`,
