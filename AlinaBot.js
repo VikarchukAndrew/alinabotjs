@@ -8,15 +8,6 @@ const { DateTime } = require('luxon');
 const express = require("express");
 const app = express();
 
-const {join} = require('path');
-
-/**
- * @type {import("puppeteer").Configuration}
- */
-module.exports = {
-  // Changes the cache location for Puppeteer.
-  cacheDirectory: join(__dirname, '.cache', 'puppeteer'),
-};
 
 const bot = new Telegraf('5936581129:AAHh6En3oq0AkJg56PflQtcxhsRoZfTmLOk');
 
