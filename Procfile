@@ -1,1 +1,1 @@
-worker: node AlinaBot.js
+web: node AlinaBot.js
