@@ -6,7 +6,8 @@ const { executablePath } = require('puppeteer');
 const schedule = require('node-schedule');
 const { DateTime } = require('luxon');
 
-
+const browserFetcher = puppeteer.createBrowserFetcher(); 
+let revisionInfo = await browserFetcher.download('1095492');
 const bot = new Telegraf('5936581129:AAHh6En3oq0AkJg56PflQtcxhsRoZfTmLOk');
 
 async function runJob() {
@@ -14,10 +15,11 @@ async function runJob() {
   puppeteer.use(StealthPlugin())
   const browser = await puppeteer.launch({
     headless: 'new',
-    executablePath: '/app/.apt/usr/bin/chromium-browser',
+    executablePath: revisionInfo.executablePath,
     args: [
       `--disable-extensions-except=${pathToExtension}`,
-      `--load-extension=${pathToExtension}`
+      `--load-extension=${pathToExtension}`,
+      '--no-sandbox'
     ],
     executablePath: executablePath()
   });
